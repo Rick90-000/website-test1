@@ -10,8 +10,17 @@ button {background-color:aquamarine;}
 </style>
 <body>
   <style> body {background-color:blue;}</style>
-  <script> function add(p1,p2) {return p1 + p2;}
-  function calculate(){
+  <script> 
+  function add(p1,p2) {return p1 + p2;}
+
+  function sub(p1,p2) {return p1 - p2;}
+
+  function divide(p1,p2) {return p1 / p2;}
+
+  function multi(p1,p2) {return p1 * p2;}
+  
+  function calculate(arithfunc){
+    
     function getnumberinputasInt(elementname){
       var Numberinput = document.getElementsByName(elementname)[0].value;
       var numberInt =parseInt(Numberinput);
@@ -22,7 +31,7 @@ button {background-color:aquamarine;}
   
     var LastnumberInt = getnumberinputasInt('lnumber');
   
-    return FirstnumberInt + LastnumberInt;
+    return arithfunc(FirstnumberInt,LastnumberInt);
 
     }
   
@@ -37,8 +46,10 @@ button {background-color:aquamarine;}
 First number: <input type="text" name="fnumber"><br>
 Last number: <input type="text" name="lnumber"><br>
   
-<button onclick="alert(calculate())">Add</button>
-<button onclick="alert(parseInt(document.getElementsByTagName('input')[0].value)-parseInt(document.getElementsByTagName('input')[1].value))">Subtract</button> 
+<button onclick="alert(calculate(add))">Add</button>
+<button onclick="alert(calculate(sub))">Subtract</button> 
+<button onclick="alert(calculate(divide))">Divide</button> 
+<button onclick="alert(calculate(multi))">Multiply</button> 
 
 </body>
 </html>
