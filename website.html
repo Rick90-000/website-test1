@@ -62,15 +62,34 @@ button {background-color:aquamarine;}
 <input type="text" name="Bild-URL">
 <script>
 function addImg(){
+// original functiom
 var ImgURL=document.getElementsByName("Bild-URL")[0].value;
 console.log(ImgURL)
 var img=document.createElement("img")
 img.src=ImgURL
 var playgrounddiv=document.getElementById("playground");
 playgrounddiv.appendChild(img);
+img.addEventListener("click", removeImg);
 }
+
 </script>
 <button onclick="addImg()" >Bild hinzufuegen</button>
+
+<script>
+  function removeImg(el){
+  // original functiom
+  debugger;
+  var ImgURL=document.getElementsByName("Bild-URL")[0].value;
+  console.log(ImgURL)
+  var img=document.createElement(img)
+  img.src=ImgURL
+  var playgrounddiv=document.getElementById("playground");
+  playgrounddiv.removeChild(img);
+  }
+  
+  </script>
+  <button onclick="removeImg()" >Bild entfernen</button>
+
 </div>
 </body>
 </html>
