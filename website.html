@@ -76,15 +76,11 @@ img.addEventListener("click", removeImg);
 <button onclick="addImg()" >Bild hinzufuegen</button>
 
 <script>
-  function removeImg(el){
+  function removeImg(event){
   // original functiom
-  debugger;
-  var ImgURL=document.getElementsByName("Bild-URL")[0].value;
-  console.log(ImgURL)
-  var img=document.createElement(img)
-  img.src=ImgURL
+
   var playgrounddiv=document.getElementById("playground");
-  playgrounddiv.removeChild(img);
+  playgrounddiv.removeChild(event.target);
   }
   
   </script>
